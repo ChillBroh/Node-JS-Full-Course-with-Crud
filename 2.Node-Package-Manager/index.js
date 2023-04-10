@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 let _ = require('underscore');
 
 //require function resolve module using below steps
