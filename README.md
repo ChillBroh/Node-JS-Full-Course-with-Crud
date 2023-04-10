@@ -1,4 +1,4 @@
-# Node-JS Full Course (This course contains all the important parts of node js)
+# Node-JS Full Course
 
 # 1.Node Module System
 # 2.Node Package Manager
