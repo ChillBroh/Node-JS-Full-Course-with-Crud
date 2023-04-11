@@ -14,6 +14,13 @@ app.get('/api/courses', (req, res) => {
   res.send([1, 2, 3, 4]);
 });
 
-app.listen(3000, () => {
-  console.log('Listening to port 3000');
+//after deploys the port dynamically asign and not as exactly 3000. so below code must improve
+// app.listen(3000, () => {
+//   console.log('Listening to port 3000');
+// });
+
+//PORT
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`);
 });
