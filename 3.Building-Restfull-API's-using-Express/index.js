@@ -18,6 +18,18 @@ app.get('/api/courses', (req, res) => {
 // app.listen(3000, () => {
 //   console.log('Listening to port 3000');
 // });
+app.get('/api/courses/:id', (req, res) => {
+  const UID = req.params.id;
+  res.send(UID);
+});
+
+//multi parameters
+app.get('/api/posts/:id/:years/:months', (req, res) => {
+  const UID = req.params.id;
+  const years = req.params.years;
+  const months = req.params.months;
+  res.send(`ID is : ${UID}, Years are : ${years}, Months are : ${months}`);
+});
 
 //PORT
 const port = process.env.PORT || 3000;
