@@ -14,3 +14,34 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+const Schema = mongoose.Schema;
+
+const courseSchema = new Schema({
+  name: String,
+  author: String,
+  tags: [String],
+  date: { type: Date, default: Date.now },
+  isPublished: Boolean,
+});
+
+//compile schema to a model
+const Course = mongoose.model('Course', courseSchema);
+
+//create object and map with document in mongodb database
+const createCourse = async () => {
+  try {
+    const course = new Course({
+      name: 'React.js Course',
+      author: 'Ishara',
+      tags: ['React', 'Frontend'],
+      isPublished: true,
+    });
+
+    const result = await course.save();
+    console.log(result);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+createCourse();
