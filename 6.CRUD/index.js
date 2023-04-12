@@ -44,4 +44,21 @@ const createCourse = async () => {
     console.log(err.message);
   }
 };
-createCourse();
+// createCourse()
+
+const getCourses = async () => {
+  /*eq (equal)
+    ne (not equal)
+    gt (greater than)
+    gte(greater than or equal)
+    lt (lesser than)
+    lte (lesser than or equal)
+    in
+    nin (not in) */
+  const courses = await Course.find({ author: 'Ishara' })
+    .limit(5)
+    .sort({ name: 1 }) //for desc -1
+    .select({ name: 1, tags: 1 });
+  console.log(courses);
+};
+getCourses();
